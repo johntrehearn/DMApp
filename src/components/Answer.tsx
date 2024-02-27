@@ -4,9 +4,9 @@ function Answer() {
 
     const [question, setQuestion] = useState('')
 
-    function displayQuestion() {
-        console.log('FULL question:', question)
-    }
+    /*  function displayQuestion() {
+         console.log('FULL question:', question)
+     } */
 
     const inputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
         const target = e.target as HTMLInputElement;
@@ -14,15 +14,15 @@ function Answer() {
         console.log("TTTT", question)
     }
 
-    const click_button = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const clickHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
         console.log('button clicked')
-        displayQuestion();
-
-
-
+        setRendererQuestion(question)
+        //displayQuestion()
 
     }
+
+    const [renderedQuestion, setRendererQuestion] = useState('')
 
 
 
@@ -36,13 +36,21 @@ function Answer() {
                     <input type="text" onChange={inputHandler} />
 
                 </label>
-                <button className='tell_me_the_answer' onClick={click_button}>
+                <button className='tell_me_the_answer' onClick={clickHandler}>
                     Find the future
                 </button>
             </form>
-            <div>
-                <p>{question}</p>
-            </div>
+            {/* <div>
+                <p style={{ display: 'none' }}>{question}</p>
+
+            </div> */}
+
+            {renderedQuestion && (
+                <div>
+                    <h2>Your Question was:</h2>
+                    <p>{renderedQuestion}</p>
+                </div>
+            )}
         </>
     )
 }
