@@ -1,23 +1,23 @@
-import React, { useState } from 'react';
+import React, { ChangeEvent, useState } from 'react';
 
 function Answer() {
 
     const [question, setQuestion] = useState('')
 
-    function fullQuestion() {
+    function displayQuestion() {
         console.log('FULL question:', question)
     }
 
-    const inputHandler = (e: Event) => {
+    const inputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
         const target = e.target as HTMLInputElement;
         setQuestion(target.value)
         console.log("TTTT", question)
     }
 
-    const click_button = (e: Event) => {
+    const click_button = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
         console.log('button clicked')
-        fullQuestion();
+        displayQuestion();
 
 
 
@@ -40,6 +40,9 @@ function Answer() {
                     Find the future
                 </button>
             </form>
+            <div>
+                <p>{question}</p>
+            </div>
         </>
     )
 }
