@@ -4,21 +4,15 @@ function Answer() {
 
     const [question, setQuestion] = useState('')
 
-    /*  function displayQuestion() {
-         console.log('FULL question:', question)
-     } */
-
     const inputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
         const target = e.target as HTMLInputElement;
         setQuestion(target.value)
-        console.log("TTTT", question)
     }
 
     const clickHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
         console.log('button clicked')
         setRendererQuestion(question)
-        //displayQuestion()
 
     }
 
@@ -40,10 +34,6 @@ function Answer() {
                     Find the future
                 </button>
             </form>
-            {/* <div>
-                <p style={{ display: 'none' }}>{question}</p>
-
-            </div> */}
 
             {renderedQuestion && (
                 <div>
