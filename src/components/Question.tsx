@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 
 
-function RenderedQuestion(props: any) {
+function Question(props: any) {
 
 
 
@@ -29,4 +29,4 @@ function RenderedQuestion(props: any) {
     )
 }
 
-export default RenderedQuestion;
+export default Question;
