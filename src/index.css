@@ -1,13 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Lato&display=swap');
 
 :root {
-  --base-font: 'Julius Sans One', sans-serif;
+  --side-padding: 10vw;
+
+  --font-base: 'Lato', Arial, Helvetica sans-serif;
+  --font-display: 'Julius Sans One', Arial, Helvetica sans-serif;
 
   --clr-light: #fff;
   --clr-mid: #f0d7d7;
+  --clr-lightgrey: #555;
   --clr-grey: #333;
   --clr-dark: #501414;
+  --clr-highlight: #ff6347;
 }
+
+/* BASIC STYLES */
 
 * {
   margin: 0;
@@ -21,7 +28,7 @@ body {
   background-position: top left, bottom left, bottom right;
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-size: 15vh, 40vh, 50vh;
-  font-family: var(--base-font);
+  font-family: var(--font-base);
   color: var(--clr-grey);
 }
 
@@ -33,4 +40,168 @@ input {
 
 button {
   cursor: pointer;
+}
+
+/* TEXT STYLES */
+
+.text--readable {
+  font-family: var(--font-base);
+  color: var(--clr-lightgrey);
+}
+.text--big {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+}
+.text--answer {
+  font-family: var(--font-display);
+  font-size: 3rem;
+}
+
+/* HEADER */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem var(--side-padding);
+  background-color: var(--clr-mid);
+  font-size: 2.5rem;
+  color: var(--clr-dark);
+}
+/* Add a div.header__decor before the .header closing tag */
+.header__decor {
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: var(--clr-dark);
+  font-family: var(--font-display);
+}
+.header__decor::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -4rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: var(--clr-dark);
+  transform: translateY(0.5rem);
+}
+.header__decor::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -7rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: var(--clr-dark);
+  transform: translateY(1rem);
+}
+
+/* MAGIC 8 BALL */
+/*
+<div className="ball ball--start/ball--happy/ball--sad/ball-neutral">
+  <span className="ball__number">8</span>
+</div>
+*/
+
+#ball {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25rem;
+  height: 25rem;
+  border: 4.5rem solid var(--clr-dark);
+  border-radius: 50%;
+  background-color: var(--clr-light);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-size: 11rem;
+  color: var(--clr-dark);
+}
+#ball::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  left: 1rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: var(--clr-light);
+}
+#ball::after {
+  content: '';
+  position: absolute;
+  top: 5%;
+  left: -2.2rem;
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
+  background-color: var(--clr-light);
+}
+.ball__number {
+  display: none;
+}
+.ball--start .ball__number {
+  display: block;
+}
+.ball--happy {
+  background-image: url('./assets/faces/happy.svg');
+}
+.ball--sad {
+  background-image: url('./assets/faces/sad.svg');
+}
+.ball--neutral {
+  background-image: url('./assets/faces/neutral.svg');
+}
+
+/* BUTTON */
+
+.button {
+  display: block;
+  padding: 0.8rem 3rem;
+  border: 1px solid var(--clr-dark);
+  border-radius: 20px;
+  background-color: var(--clr-dark);
+  font-size: 1.25rem;
+  color: var(--clr-light);
+  text-transform: capitalize;
+  transition: all 0.2s ease-out;
+}
+.button:hover {
+  background-color: var(--clr-light);
+  color: var(--clr-dark);
+}
+.button:active {
+  transform: scale(0.95);
+}
+.button:focus {
+  outline: none;
+  border: 1px solid var(--clr-highlight);
+}
+
+/* INPUT */
+
+.input {
+  display: block;
+  padding: 0.8rem 1.5rem;
+  border: 2px solid var(--clr-dark);
+  border-radius: 20px;
+  font-size: 1.25rem;
+  color: var(--clr-grey);
+  transition: all 0.2s ease-out;
+}
+.input:focus {
+  border-color: var(--clr-highlight);
+  outline: none;
+}
+
+/* FOOTER */
+
+.footer {
+  text-align: center;
 }
