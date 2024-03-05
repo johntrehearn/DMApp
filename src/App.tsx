@@ -1,33 +1,57 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Header from './components/Header'
+import Input from './components/Input'
+import Answer from './components/Answer'
+import Question from './components/Question'
+import { render } from 'react-dom'
+
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  // set the question
+  const [question, setQuestion] = useState('')
+
+  // set whether the questions
+
+  const [showInput, setshowInput] = useState(true)
+
+  const [renderedQuestion, setRenderedQuestion] = useState('')
+
+  const [renderInput, setRenderedInput] = useState('')
+
+  const inputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const target = e.target as HTMLInputElement;
+    setQuestion(target.value)
+    console.log('Question is', question)
+    console.log("rendered Question", renderedQuestion)
+
+  }
+
+
+
+
+  const clickHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    setRenderedQuestion(question)
+    console.log('button clicked')
+    setshowInput(false)
+
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+
+      <h1>App</h1>
+
+
+
+      <Header />
+      {showInput && <Question inputHandler={inputHandler} clickHandler={clickHandler} />}
+
+      <Answer renderedQuestion={renderedQuestion} />
+
+
     </>
   )
 }
