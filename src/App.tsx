@@ -1,10 +1,9 @@
 import { useState } from 'react'
 import './App.css'
 import Header from './components/Header'
-import Input from './components/Input'
 import Answer from './components/Answer'
 import Question from './components/Question'
-import { render } from 'react-dom'
+
 
 
 function App() {
@@ -18,7 +17,7 @@ function App() {
 
   const [renderedQuestion, setRenderedQuestion] = useState('')
 
-  const [renderInput, setRenderedInput] = useState('')
+  
 
   const [outcome2, setOutcome2] = useState('')
 
@@ -88,7 +87,7 @@ const clickHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
   return (
     <>
 
-      <h1>App</h1>
+    
 
 
 
