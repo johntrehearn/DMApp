@@ -11,7 +11,7 @@ function Answer(props: any) {
                     <h2>Your Question was:</h2>
                     <p>{props.renderedQuestion}</p>
                     <h2>The universe says:</h2>
-                    <p>{props.outcome2}</p>
+                    <p>{props.outcomeState}</p>
                     <button onClick={refreshPage}>Ask again</button> 
                 </div>
             )}

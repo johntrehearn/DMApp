@@ -1,9 +1,7 @@
 import { useState } from 'react'
-import './App.css'
 import Header from './components/Header'
 import Answer from './components/Answer'
 import Question from './components/Question'
-
 
 
 function App() {
@@ -19,7 +17,7 @@ function App() {
 
   
 
-  const [outcome2, setOutcome2] = useState('')
+  const [outcomeState, setOutcomeState] = useState('')
 
   const inputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const target = e.target as HTMLInputElement;
@@ -35,34 +33,38 @@ function App() {
  
 
   const chooseAnswer = () => {
-    let randomNumber: number = Math.trunc(Math.random() * 12);
+    let randomNumber: number = Math.floor(Math.random() *
+    12
+    ) +
+    1
+    ;
 
     let outcome = (): string => {
         switch (randomNumber) {
             case 1:
-                return "I don’t think you are ready to hear the answer to this one.";
+                return "I don’t think you are ready to hear the answer to this one."; // :|
             case 2:
-                return "Yes!";
+                return "Yes!"; // :)
             case 3:
-                return "No!";
+                return "No!"; // :(
             case 4:
-                return "I guess so...";
+                return "I guess so..."; // :|
             case 5:
-                return "I very much doubt that.";
+                return "I very much doubt that."; // :(
             case 6:
-                return "Blablabla, this question bores me..";
+                return "Blablabla, this question bores me.."; // :(
             case 7:
-                return "Zzzz… Huh? Oh sorry… Yeah sure, whatever.";
+                return "Zzzz… Huh? Oh sorry… Yeah sure, whatever."; // :|
             case 8:
-                return "My professional guess is: Yup!";
+                return "My professional guess is: Yup!"; // :)
             case 9:
-                return "Absolutely, I am so happy for you!";
+                return "Absolutely, I am so happy for you!"; // :)
                 case 10:
-                return "Absolutely, it saddens me greatly..";
+                return "Absolutely, it saddens me greatly.."; // :(
                 case 11:
-                return "Hell yeah, you cheeky human ;)";
+                return "Hell yeah, you cheeky human ;)"; // :)
                 case 12:
-                  return "Naughty naughty.. I will never tell.";
+                  return "Naughty naughty.. I will never tell."; // :)
             default:
                 return "Hmm, I am a bit busy at the moment.";
                 
@@ -70,14 +72,13 @@ function App() {
         }
     };
    
-    setOutcome2(outcome);
+    setOutcomeState(outcome);
     
 };
 
 const clickHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
   e.preventDefault();
   setRenderedQuestion(question)
-  console.log('button clicked')
   setshowInput(false)
   chooseAnswer()  
 
@@ -94,7 +95,7 @@ const clickHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
       <Header />
       {showInput && <Question inputHandler={inputHandler} clickHandler={clickHandler} />}
 
-      <Answer renderedQuestion={renderedQuestion} outcome2={outcome2}/>
+      <Answer renderedQuestion={renderedQuestion} outcomeState={outcomeState}/>
 
     </>
   )
