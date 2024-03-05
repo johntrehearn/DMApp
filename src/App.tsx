@@ -24,7 +24,7 @@ function App() {
     setQuestion(target.value)
     console.log('Question is', question)
     console.log("rendered Question", renderedQuestion)
-
+  
   }
 
 
@@ -78,11 +78,15 @@ function App() {
 
 const clickHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
   e.preventDefault();
-  setRenderedQuestion(question)
-  setshowInput(false)
-  chooseAnswer()  
-
-}
+  if (question === '') {
+  alert('Please type a question.');  
+  
+  } else {
+    setRenderedQuestion(question)
+    setshowInput(false)
+    chooseAnswer()
+  }
+} 
 
 
   return (
