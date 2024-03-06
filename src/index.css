@@ -102,7 +102,7 @@ button {
 
 /* MAGIC 8 BALL */
 /*
-<div className="ball ball--start/ball--happy/ball--sad/ball-neutral">
+<div id="ball" className="ball--start/ball--happy/ball--sad/ball-neutral">
   <span className="ball__number">8</span>
 </div>
 */
@@ -112,24 +112,26 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 25rem;
-  height: 25rem;
-  border: 4.5rem solid var(--clr-dark);
+  width: 20rem;
+  height: 20rem;
+  border: 3.8rem solid var(--clr-dark);
   border-radius: 50%;
   background-color: var(--clr-light);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  font-size: 11rem;
+  font-family: var(--font-display);
+
+  font-size: 9rem;
   color: var(--clr-dark);
 }
 #ball::before {
   content: '';
   position: absolute;
   top: -10%;
-  left: 1rem;
-  width: 2rem;
-  height: 2rem;
+  left: 0.8rem;
+  width: 1.8rem;
+  height: 1.8rem;
   border-radius: 50%;
   background-color: var(--clr-light);
 }
@@ -138,8 +140,8 @@ button {
   position: absolute;
   top: 5%;
   left: -2.2rem;
-  width: 3.2rem;
-  height: 3.2rem;
+  width: 2.8rem;
+  height: 2.8rem;
   border-radius: 50%;
   background-color: var(--clr-light);
 }
