@@ -1,6 +1,8 @@
 function Header() {
     return (
-        <h1>This is a header box</h1>
+        <div>
+        <h1>Welcome to the magic eightball</h1>
+        </div>
     )
 }
 
