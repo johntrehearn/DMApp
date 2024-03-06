@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 
 function Answer(props: any) {
+
+    const refreshPage = () => {
+        window.location.reload();
+    }
     return (
         <>
 
@@ -10,6 +14,7 @@ function Answer(props: any) {
                     <p>{props.renderedQuestion}</p>
                     <h2>The universe says:</h2>
                     <p>This is the answer</p>
+                    <button onClick={refreshPage}>Ask again</button> 
                 </div>
             )}
         </>
