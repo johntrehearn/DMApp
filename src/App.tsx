@@ -36,30 +36,38 @@ function App() {
  
 
   const chooseAnswer = () => {
-    let randomNumber: number = Math.trunc(Math.random() * 10);
+    let randomNumber: number = Math.trunc(Math.random() * 12);
 
     let outcome = (): string => {
         switch (randomNumber) {
             case 1:
-                return "My heart says yes, indeed!";
+                return "I don’t think you are ready to hear the answer to this one.";
             case 2:
-                return "Absolutely no.";
+                return "Yes!";
             case 3:
-                return "Even the very wise cannot see all ends.";
+                return "No!";
             case 4:
-                return "Perhaps.";
+                return "I guess so...";
             case 5:
-                return "Yes indeed, it has been revealed to me.";
+                return "I very much doubt that.";
             case 6:
-                return "I do not want to think about it.";
+                return "Blablabla, this question bores me..";
             case 7:
-                return "Absolutely, yes.";
+                return "Zzzz… Huh? Oh sorry… Yeah sure, whatever.";
             case 8:
-                return "I do not think so.";
+                return "My professional guess is: Yup!";
             case 9:
-                return "Hell yeah!";
+                return "Absolutely, I am so happy for you!";
+                case 10:
+                return "Absolutely, it saddens me greatly..";
+                case 11:
+                return "Hell yeah, you cheeky human ;)";
+                case 12:
+                  return "Naughty naughty.. I will never tell.";
             default:
                 return "Hmm, I am a bit busy at the moment.";
+                
+                
         }
     };
    
