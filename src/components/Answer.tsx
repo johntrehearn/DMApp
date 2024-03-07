@@ -5,7 +5,7 @@ function Answer(props: any) {
   return (
     <>
       {props.renderedQuestion && (
-        <div>
+        <div className="answer-layout">
           <h2 className="text--big">Your Question was:</h2>
           <p>{props.renderedQuestion}</p>
           <h2 className="text--big">The universe says:</h2>

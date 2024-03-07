@@ -80,11 +80,13 @@ function App() {
     <>
       <Header />
 
-      <EightBall face={outcomeState.emotion} />
+      <main>
+        <EightBall face={outcomeState.emotion} />
 
-      {showInput && <Question inputHandler={inputHandler} clickHandler={clickHandler} />}
+        {showInput && <Question inputHandler={inputHandler} clickHandler={clickHandler} />}
 
-      <Answer renderedQuestion={renderedQuestion} outcomeState={outcomeState} />
+        <Answer renderedQuestion={renderedQuestion} outcomeState={outcomeState} />
+      </main>
 
       <Footer />
     </>
