@@ -50,7 +50,7 @@ button {
 }
 .text--big {
   font-family: var(--font-display);
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 .text--answer {
   font-family: var(--font-display);
@@ -166,11 +166,12 @@ button {
 
 .button {
   display: block;
-  padding: 0.8rem 3rem;
+  padding: 0.6rem 3rem;
   border: 1px solid var(--clr-dark);
-  border-radius: 20px;
+  border-radius: 30px;
   background-color: var(--clr-dark);
-  font-size: 1.25rem;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
   color: var(--clr-light);
   text-transform: capitalize;
   transition: all 0.2s ease-out;
@@ -191,10 +192,10 @@ button {
 
 .input {
   display: block;
-  padding: 0.8rem 1.5rem;
+  padding: 0.6rem 1.5rem;
   border: 2px solid var(--clr-dark);
   border-radius: 20px;
-  font-size: 1.25rem;
+  font-family: var(--font-base);
   color: var(--clr-grey);
   transition: all 0.2s ease-out;
 }
