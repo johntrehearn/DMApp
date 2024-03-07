@@ -6,11 +6,13 @@ function Answer(props: any) {
     <>
       {props.renderedQuestion && (
         <div>
-          <h2>Your Question was:</h2>
+          <h2 className="text--big">Your Question was:</h2>
           <p>{props.renderedQuestion}</p>
-          <h2>The universe says:</h2>
-          <p>{props.outcomeState.answer}</p>
-          <button onClick={refreshPage}>Ask again</button>
+          <h2 className="text--big">The universe says:</h2>
+          <p className="text--answer">{props.outcomeState.answer}</p>
+          <button onClick={refreshPage} className="button">
+            Ask again
+          </button>
         </div>
       )}
     </>

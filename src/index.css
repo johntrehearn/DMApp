@@ -44,17 +44,13 @@ button {
 
 /* TEXT STYLES */
 
-.text--readable {
-  font-family: var(--font-base);
-  color: var(--clr-lightgrey);
-}
 .text--big {
   font-family: var(--font-display);
   font-size: 1.2rem;
 }
 .text--answer {
   font-family: var(--font-display);
-  font-size: 3rem;
+  font-size: 2.8rem;
 }
 
 /* HEADER */
