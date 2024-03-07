@@ -206,5 +206,6 @@ button {
 /* FOOTER */
 
 .footer {
+  font-family: var(--font-display);
   text-align: center;
 }
