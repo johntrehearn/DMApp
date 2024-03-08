@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Lato&display=swap');
 
 :root {
-  --side-padding: 10vw;
+  --side-padding: 20vw;
 
   --font-base: 'Lato', Arial, Helvetica sans-serif;
   --font-display: 'Julius Sans One', Arial, Helvetica sans-serif;
@@ -42,19 +42,62 @@ button {
   cursor: pointer;
 }
 
+/* LAYOUT STYLES */
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 2rem;
+  padding: 0 var(--side-padding);
+  text-align: center;
+}
+
+.question-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+}
+.question-layout label {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+}
+.question-layout input {
+  margin-top: 1rem;
+}
+
+.answer-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.answer-layout h2 {
+  margin-bottom: 0.5rem;
+}
+.answer-layout p {
+  margin-bottom: 2.5rem;
+}
+
 /* TEXT STYLES */
 
-.text--readable {
-  font-family: var(--font-base);
-  color: var(--clr-lightgrey);
-}
 .text--big {
   font-family: var(--font-display);
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 .text--answer {
   font-family: var(--font-display);
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 /* HEADER */
@@ -65,12 +108,14 @@ button {
   align-items: center;
   padding: 1rem var(--side-padding);
   background-color: var(--clr-mid);
-  font-size: 2.5rem;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
   color: var(--clr-dark);
 }
 /* Add a div.header__decor before the .header closing tag */
 .header__decor {
   position: relative;
+  display: block;
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
@@ -121,7 +166,6 @@ button {
   background-size: cover;
   background-repeat: no-repeat;
   font-family: var(--font-display);
-
   font-size: 9rem;
   color: var(--clr-dark);
 }
@@ -165,11 +209,12 @@ button {
 
 .button {
   display: block;
-  padding: 0.8rem 3rem;
+  padding: 0.6rem 3rem;
   border: 1px solid var(--clr-dark);
-  border-radius: 20px;
+  border-radius: 30px;
   background-color: var(--clr-dark);
-  font-size: 1.25rem;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
   color: var(--clr-light);
   text-transform: capitalize;
   transition: all 0.2s ease-out;
@@ -190,10 +235,11 @@ button {
 
 .input {
   display: block;
-  padding: 0.8rem 1.5rem;
+  width: 100%;
+  padding: 0.6rem 1.5rem;
   border: 2px solid var(--clr-dark);
   border-radius: 20px;
-  font-size: 1.25rem;
+  font-family: var(--font-base);
   color: var(--clr-grey);
   transition: all 0.2s ease-out;
 }
@@ -205,5 +251,44 @@ button {
 /* FOOTER */
 
 .footer {
+  padding-bottom: 1.5rem;
+  font-family: var(--font-display);
   text-align: center;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 1300px) {
+  :root {
+    --side-padding: 10vw;
+  }
+}
+
+@media (max-width: 1100px) {
+  body {
+    background-size: 15vh, 40vw, 50vw;
+  }
+}
+
+@media (max-width: 850px) {
+  :root {
+    --side-padding: 1rem;
+  }
+}
+
+@media (max-width: 700px) {
+  main {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .header {
+    justify-content: center;
+  }
+  .header__decor {
+    display: none;
+  }
 }

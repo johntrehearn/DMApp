@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Answer from './components/Answer';
 import Question from './components/Question';
 import EightBall from './components/EightBall';
+import Footer from './components/Footer';
 
 function App() {
   type outcomeType = {
@@ -79,11 +80,15 @@ function App() {
     <>
       <Header />
 
-      <EightBall face={outcomeState.emotion} />
+      <main>
+        <EightBall face={outcomeState.emotion} />
 
-      {showInput && <Question inputHandler={inputHandler} clickHandler={clickHandler} />}
+        {showInput && <Question inputHandler={inputHandler} clickHandler={clickHandler} />}
 
-      <Answer renderedQuestion={renderedQuestion} outcomeState={outcomeState} />
+        <Answer renderedQuestion={renderedQuestion} outcomeState={outcomeState} />
+      </main>
+
+      <Footer />
     </>
   );
 }
