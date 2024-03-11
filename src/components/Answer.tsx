@@ -1,4 +1,11 @@
-function Answer(props: any) {
+interface AnswerProps {
+  renderedQuestion: string;
+  outcomeState: {
+    answer: string;
+  };
+}
+
+function Answer(props: AnswerProps) {
   const refreshPage = () => {
     window.location.reload();
   };

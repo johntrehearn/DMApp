@@ -1,9 +1,3 @@
-/*
-<div className="ball ball--start/ball--happy/ball--sad/ball-neutral">
-<span className="ball__number">8</span>
-</div>
-*/
-
 interface EightBallProps {
   face: string;
 }
