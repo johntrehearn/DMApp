@@ -146,11 +146,6 @@ main {
 }
 
 /* MAGIC 8 BALL */
-/*
-<div id="ball" className="ball--start/ball--happy/ball--sad/ball-neutral">
-  <span className="ball__number">8</span>
-</div>
-*/
 
 #ball {
   position: relative;

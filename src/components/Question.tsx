@@ -1,4 +1,9 @@
-function Question(props: any) {
+interface QuestionProps {
+  inputHandler: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  clickHandler: (event: React.MouseEvent<HTMLButtonElement>) => void;
+}
+
+function Question(props: QuestionProps) {
   return (
     <>
       <form className="question-layout">
